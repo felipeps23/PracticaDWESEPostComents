@@ -110,7 +110,7 @@
 </div>
 <div class="copyright-content">
 <div class="container">
-<div class="copyright-text text-center">&copy; 2020 Felipe - PostComentsApp. All Rights Reserved.<a href="http://www.inspiro-media.com/" target="_blank" rel="noopener"> INSPIRO</a> </div>
+<div class="copyright-text text-center">&copy; 2020 Felipe - PostComentsApp. All Rights Reserved.</div>
 </div>
 </div>
 </footer>

@@ -20,7 +20,7 @@
 <div class="container">
 
 <div id="logo">
-<a href="index-2.html">
+<a href="#">
 <span class="logo-default">PostComentsApp</span>
 <span class="logo-dark">PostComentsApp</span>
 </a>
@@ -92,6 +92,36 @@ Comments
 </div>
 </div>
 @endforeach
+
+<form role="form" action="{{ url('frontend') }}" method="post" id="createpostForm">
+    @csrf
+
+
+        <div class="card-body">
+
+            <div class="form-group" style="display:none">
+                 <label for="idpost">idpost</label>
+                 <input type="idpost" maxlength="45" minlength="1" required class="form-control" id="idpost" placeholder="idpost" name="idpost" value="{{ $post ->id }}">
+          </div>
+          <div class="form-group">
+                <label for="email">Email</label>
+                    <input type="text" maxlength="80" minlength="2" required class="form-control" id="email" placeholder="Email" name="email" value="{{ old('email') }}">
+            </div>
+            <div class="form-group">
+                 <label for="text">Text</label>
+                 <input type="text" maxlength="45" minlength="1" required class="form-control" id="text" placeholder="Texto" name="text" value="{{ old('text') }}">
+            </div>
+            <div class="form-group">
+                 <label for="date">date</label>
+                    <input type="date" class="form-control" id="date" name="date" value="{{ old('date') }}">
+            </div>
+
+             <button type="submit" class="btn btn-primary">Enviar comentario</button>
+        </div>
+        <br>
+
+</form>
+
 </section>
 
 <footer id="footer">
@@ -102,7 +132,7 @@ Comments
 </div>
 <div class="copyright-content">
 <div class="container">
-<div class="copyright-text text-center">&copy; 2020 Felipe - PostComentsApp. All Rights Reserved.<a href="http://www.inspiro-media.com/" target="_blank" rel="noopener"> INSPIRO</a> </div>
+<div class="copyright-text text-center">&copy; 2020 Felipe - PostComentsApp. All Rights Reserved.</div>
 </div>
 </div>
 </footer>
