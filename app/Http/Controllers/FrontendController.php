@@ -23,9 +23,10 @@ class FrontendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $post = Post::find($id);
+         return view('frontend.create', ['post' => $post]);
     }
 
     /**
@@ -36,7 +37,21 @@ class FrontendController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $object = new Coment($request->all());
+
+        // dd($object);
+        try {
+            $result = $object->save();
+        } catch(\Exception $e) {
+            dd($object);
+            $result = 0;
+        }
+        if($object->id > 0) {
+            $response = ['op' => 'create', 'r' => $result, 'id' => $object->id];
+            return redirect('frontend/'. $object->idpost)->with($response);
+        } else {
+            return back()->withInput()->with(['error' => 'algo ha fallado']);
+        }
     }
 
     /**
